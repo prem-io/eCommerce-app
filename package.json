@@ -1,0 +1,28 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-geek/eCommerce-app.git"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "mongodb"
+  ],
+  "author": "Prem Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-geek/eCommerce-app/issues"
+  },
+  "homepage": "https://github.com/web-geek/eCommerce-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.1"
+  }
+}
