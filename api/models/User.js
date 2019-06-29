@@ -48,6 +48,8 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', UserSchema)
 
+
+module.exports = User
 // pre hooks - Model Middleware (mongoose)
 userSchema.pre('save', function(next){
     const user = this
