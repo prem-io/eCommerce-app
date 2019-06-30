@@ -7,6 +7,7 @@ const authenticateUser = function(req, res, next) {
             if(user) {
                 req.user = user
                 req.token = token
+                console.log("user authenticated")
                 next()
             } else {
                 res.status('401').send({ notice: 'token not available'})
