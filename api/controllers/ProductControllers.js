@@ -3,7 +3,7 @@ const router = express.Router()
 
 const { authenticateUser } = require('../middleware/authenticateUser')
 const { authorizeUser } = require('../middleware/authorizeUser')
-const Product = require('../models/Products')
+const Product = require('../models/Product')
 
 router.get("/", (req, res) => {
     Product.find().populate("category")

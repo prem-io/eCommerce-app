@@ -4,6 +4,7 @@ const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const Schema = mongoose.Schema
+const { CartSchema } = require('./Cart')
 
 const userSchema = new Schema({
     username: {
@@ -43,7 +44,8 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    carts: [CartSchema]
 })
 
 // pre hooks - Model Middleware (mongoose)
