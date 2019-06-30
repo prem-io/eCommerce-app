@@ -11,6 +11,7 @@ const { productRouter } = require('./api/controllers/ProductControllers')
 const { cartRouter } = require('./api/controllers/CartController')
 const { orderRouter } = require('./api/controllers/OrderController')
 const { reviewRouter } = require('./api/controllers/ReviewController')
+const { whitelistRouter } = require('./api/controllers/WhitelistController')
 
 app.use(express.json())
 
@@ -21,6 +22,7 @@ app.use('/products', productRouter)
 app.use('/cart', cartRouter)
 app.use('/orders', orderRouter)
 app.use('/reviews', reviewRouter)
+app.use('/whitelist', whitelistRouter)
 
 app.get('/', (req, res) => {
     res.send("eCommerce Application...")
