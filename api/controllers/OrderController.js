@@ -5,6 +5,21 @@ const { authenticateUser } = require('../middleware/authenticateUser')
 const { Order } = require('../models/Order')
 const { User } = require('../models/User')
 
+router.get("/", authenticateUser, (req, res) => {
+    const id = req.user._id
+    User.find(id).select("order.lineItems").populate("order.lineItems.product")
+        .then(order => { res.send(order)})
+        .catch(err => { res.send(err) })
+})
+
+router.get("/:id", authenticateUser, (req, res) => {
+    const id = req.params.id
+    const user = req.user
+    User.findOne({ _id: user._id, "order._id": id }).select("order")
+        .then(order => { res.send(order)})
+        .catch(err => { res.send(err) })
+})
+
 router.post("/", authenticateUser, (req, res) => {
     const user = req.user
     const body = req.body
