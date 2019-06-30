@@ -7,7 +7,7 @@ const { User } = require("../models/User")
 
 router.get("/", authenticateUser, (req, res) => {
     const id = req.user._id
-    User.findOne(id).select("carts").populate("cart.product")
+    User.findOne(id).select("carts").populate("carts.product")
         .then(cart => { res.send(cart) })
         .catch(err => { res.send(err) })
 })

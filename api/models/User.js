@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken')
 
 const Schema = mongoose.Schema
 const { CartSchema } = require('./Cart')
+const { OrderSchema } = require('./Order')
 
 const userSchema = new Schema({
     username: {
@@ -45,7 +46,8 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    carts: [CartSchema]
+    carts: [CartSchema],
+    order: [OrderSchema]
 })
 
 // pre hooks - Model Middleware (mongoose)
